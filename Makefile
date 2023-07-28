@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: iwozniak <iwozniak@student.42abudhabi.a    +#+  +:+       +#+         #
+#    By: iwozniak <iwozniak@student.42abudhabi.ae>  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/07/03 12:11:53 by iwozniak          #+#    #+#              #
-#    Updated: 2023/07/27 11:19:13 by iwozniak         ###   ########.fr        #
+#    Updated: 2023/07/28 12:44:08 by iwozniak         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -63,7 +63,7 @@ CFLAGS = -Wall -Wextra -Werror
 AR = ar rcs
 RM = rm -f
 
-SRCS_DIR = ./
+SRCS_DIR = ./srcs/
 SRCS = $(addprefix $(SRCS_DIR), $(addsuffix .c, $(CFILES)))
 SRCS_BONUS = $(addprefix $(SRCS_DIR), $(addsuffix .c, $(CFILES_BONUS)))
 
@@ -71,15 +71,20 @@ OBJS_DIR = ./
 OBJS = $(addprefix $(OBJS_DIR), $(SRCS:.c=.o))
 OBJS_BONUS = $(addprefix $(OBJS_DIR), $(SRCS_BONUS:.c=.o))
 
-$(NAME): $(OBJS)
+HDR_NAMES = libft.h
+HDR_FOLDER = ./includes/
+HDRS = $(addprefix $(HDR_FOLDER), $(HDR_NAMES))
+HDR_INC = $(addprefix -I, $(HDR_FOLDER))
+
+$(NAME): $(OBJS) $(HDRS)
 	$(AR) $@ $^
 
-$(OBJS_DIR)%.o: %.c
-	$(CC) $(CFLAGS) -c -o $@ $<
+$(OBJS_DIR)%.o: %.c $(HDRS)
+	$(CC) $(CFLAGS) -c $(HDR_INC) -o $@ $<
 
-all: $(NAME)
+all: $(NAME) $(HDRS)
 
-bonus: $(OBJS) $(OBJS_BONUS)
+bonus: $(OBJS) $(OBJS_BONUS) $(HDRS)
 	$(AR) $(NAME) $^
 
 clean:
@@ -89,5 +94,8 @@ fclean: clean
 	$(RM) $(NAME)
 
 re: fclean all
+
+libft.h: $(HDR_FOLDER)libft.h
+	@cp $(HDR_FOLDER)libft.h .
 
 .PHONY: bonus all clean fclean re

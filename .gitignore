@@ -3,6 +3,7 @@ srcs/*.o
 *.o
 
 # Libraries
+libft.h
 *.a
 *.so
 
