@@ -1,0 +1,19 @@
+# Object files
+srcs/*.o
+*.o
+
+# Libraries
+*.a
+*.so
+
+# Executables
+*.out
+
+*.swp
+.DS_Store
+
+#libft unit tests
+libftTester/
+libft-war-machine/
+libft-unit-test/
+tests/
