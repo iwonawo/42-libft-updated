@@ -1,28 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncmp.c                                       :+:      :+:    :+:   */
+/*   ft_u_base_putnbr_pf.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: iwozniak <iwozniak@student.42abudhabi.ae>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/13 19:18:23 by iwozniak          #+#    #+#             */
-/*   Updated: 2023/07/25 10:02:54 by iwozniak         ###   ########.fr       */
+/*   Created: 2023/08/01 11:26:41 by iwozniak          #+#    #+#             */
+/*   Updated: 2023/10/15 09:53:44 by iwozniak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_strncmp(const char *s1, const char *s2, size_t n)
+int	ft_u_base_putnbr_pf(unsigned long long int n, const char *base)
 {
-	size_t	i;
+	unsigned long long int	base_len;
+	int						nbr_len;
 
-	i = 0;
-	if (n == 0)
-		return (0);
-	while ((unsigned char)s1[i] == (unsigned char)s2[i]
-		&& s1[i] != '\0' && s2[i] != '\0' && i < n - 1)
+	nbr_len = 0;
+	base_len = ft_strlen_pf(base);
+	if (n >= base_len)
 	{
-		i++;
+		ft_u_base_putnbr_pf(n / base_len, base);
+		ft_u_base_putnbr_pf(n % base_len, base);
 	}
-	return ((unsigned char)s1[i] - (unsigned char)s2[i]);
+	else
+		write(1, &base[n], 1);
+	nbr_len += ft_u_base_nbrlen_pf(n, base_len);
+	return (nbr_len);
 }

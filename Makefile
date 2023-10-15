@@ -5,57 +5,139 @@
 #                                                     +:+ +:+         +:+      #
 #    By: iwozniak <iwozniak@student.42abudhabi.ae>  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2023/07/03 12:11:53 by iwozniak          #+#    #+#              #
-#    Updated: 2023/07/28 12:44:08 by iwozniak         ###   ########.fr        #
+#    Created: 2023/09/16 13:21:57 by iwozniak          #+#    #+#              #
+#    Updated: 2023/10/15 10:47:24 by iwozniak         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-CFILES = \
-		ft_isalpha \
-		ft_isdigit \
-		ft_isalnum \
-		ft_isascii \
-		ft_isprint \
-		ft_toupper \
-		ft_tolower \
-		ft_strlen \
-		ft_strchr \
-		ft_strrchr \
-		ft_strncmp \
-		ft_strnstr \
-		ft_strlcpy \
-		ft_strlcat \
-		ft_atoi \
-		ft_strdup \
-		ft_calloc \
-		ft_bzero \
-		ft_memset \
-		ft_memmove \
-		ft_memchr \
-		ft_memcmp \
-		ft_memcpy \
-		ft_substr \
-		ft_strjoin \
-		ft_strtrim \
-		ft_split \
-		ft_itoa \
-		ft_strmapi \
-		ft_striteri \
-		ft_putchar_fd \
-		ft_putstr_fd \
-		ft_putendl_fd \
-		ft_putnbr_fd
+# **************************************************************************** #
+#	C FILES                                                                    #
+# **************************************************************************** #
 
-CFILES_BONUS = \
-		ft_lstnew \
-		ft_lstadd_front \
-		ft_lstsize \
-		ft_lstlast \
-		ft_lstadd_back \
-		ft_lstdelone \
-		ft_lstclear \
-		ft_lstiter \
-		ft_lstmap
+CFILES_CHECK = \
+			ft_isalnum \
+			ft_isalpha \
+			ft_isascii \
+			ft_isdigit \
+			ft_isprint
+
+CFILES_GNL = get_next_line \
+			ft_strlen_gnl \
+			ft_strchr_gnl \
+			ft_strcpy_gnl \
+			ft_strdup_gnl \
+			ft_strjoin_gnl
+
+CFILES_LIST = \
+			ft_lstadd_back \
+			ft_lstadd_front \
+			ft_lstclear \
+			ft_lstdelone \
+			ft_lstiter \
+			ft_lstlast \
+			ft_lstmap \
+			ft_lstnew \
+			ft_lstsize
+
+CFILES_MEMORY = \
+			ft_memset \
+			ft_bzero \
+			ft_memcpy \
+			ft_memmove \
+			ft_memchr \
+			ft_memcmp \
+			ft_calloc 
+
+CFILES_PRINT = \
+			ft_base_nbrlen \
+			ft_putchar \
+			ft_putnbr \
+			ft_putstr \
+			ft_u_base_nbrlen \
+			ft_u_base_putnbr \
+			ft_u_puthexa \
+			ft_putchar_fd \
+			ft_putstr_fd \
+			ft_putendl_fd \
+			ft_putnbr_fd \
+
+CFILES_PRINTF = ft_printf \
+			ft_putchar_pf \
+			ft_putstr_pf \
+			ft_putnbr_pf \
+			ft_base_nbrlen_pf \
+			ft_u_base_nbrlen_pf \
+			ft_u_base_putnbr_pf \
+			ft_u_puthexa_pf \
+			ft_strlen_pf \
+			ft_strchr_pf
+
+CFILES_STRING = \
+			ft_atoi \
+			ft_itoa \
+			ft_split \
+			ft_strchr \
+			ft_strcpy \
+			ft_strdup \
+			ft_strjoin \
+			ft_strlen \
+			ft_strncmp \
+			ft_substr \
+			ft_strrchr \
+			ft_strnstr \
+			ft_strlcpy \
+			ft_strlcat \
+			ft_strtrim \
+			ft_strmapi \
+			ft_striteri \
+			ft_toupper \
+			ft_tolower
+
+# **************************************************************************** #
+#	SOURCES                                                                    #
+# **************************************************************************** #
+
+SRCS_DIR = ./srcs/
+SRCS_DIR_CHECK = $(SRCS_DIR)check/
+SRCS_DIR_PRINT = $(SRCS_DIR)print/
+SRCS_DIR_PRINTF = $(SRCS_DIR)printf/
+SRCS_DIR_GNL = $(SRCS_DIR)gnl/
+SRCS_DIR_STRING = $(SRCS_DIR)str/
+SRCS_DIR_LIST = $(SRCS_DIR)lst/
+SRCS_DIR_MEMORY = $(SRCS_DIR)memory/
+
+SRCS_CHECK = $(addprefix $(SRCS_DIR_CHECK), $(addsuffix .c, $(CFILES_CHECK)))
+SRCS_PRINT = $(addprefix $(SRCS_DIR_PRINT), $(addsuffix .c, $(CFILES_PRINT)))
+SRCS_PRINTF = $(addprefix $(SRCS_DIR_PRINTF), $(addsuffix .c, $(CFILES_PRINTF)))
+SRCS_GNL = $(addprefix $(SRCS_DIR_GNL), $(addsuffix .c, $(CFILES_GNL)))
+SRCS_STRING = $(addprefix $(SRCS_DIR_STRING), $(addsuffix .c, $(CFILES_STRING)))
+SRCS_LIST = $(addprefix $(SRCS_DIR_LIST), $(addsuffix .c, $(CFILES_LIST)))
+SRCS_MEMORY = $(addprefix $(SRCS_DIR_MEMORY), $(addsuffix .c, $(CFILES_MEMORY)))
+
+# **************************************************************************** #
+#	OBJECTS                                                                    #
+# **************************************************************************** #
+
+OBJS_CHECK = $(SRCS_CHECK:.c=.o)
+OBJS_PRINT = $(SRCS_PRINT:.c=.o)
+OBJS_PRINTF = $(SRCS_PRINTF:.c=.o)
+OBJS_GNL =  $(SRCS_GNL:.c=.o)
+OBJS_STRING =  $(SRCS_STRING:.c=.o)
+OBJS_LIST = $(SRCS_LIST:.c=.o)
+OBJS_MEMORY = $(SRCS_MEMORY:.c=.o)
+
+# **************************************************************************** #
+#	HEADERS                                                                    #
+# **************************************************************************** #
+
+HDR_NAMES = libft.h
+HDR_FOLDER = ./includes/
+HDRS = $(addprefix $(HDR_FOLDER), $(HDR_NAMES))
+HDR_INC = $(addprefix -I, $(HDR_FOLDER))
+
+# **************************************************************************** #
+#	VARIABLES                                                                  #
+# **************************************************************************** #
 
 NAME = libft.a
 CC = cc
@@ -63,39 +145,42 @@ CFLAGS = -Wall -Wextra -Werror
 AR = ar rcs
 RM = rm -f
 
-SRCS_DIR = ./srcs/
-SRCS = $(addprefix $(SRCS_DIR), $(addsuffix .c, $(CFILES)))
-SRCS_BONUS = $(addprefix $(SRCS_DIR), $(addsuffix .c, $(CFILES_BONUS)))
+# **************************************************************************** #
+#	TARGETS                                                                    #
+# **************************************************************************** #
 
-OBJS_DIR = ./
-OBJS = $(addprefix $(OBJS_DIR), $(SRCS:.c=.o))
-OBJS_BONUS = $(addprefix $(OBJS_DIR), $(SRCS_BONUS:.c=.o))
-
-HDR_NAMES = libft.h
-HDR_FOLDER = ./includes/
-HDRS = $(addprefix $(HDR_FOLDER), $(HDR_NAMES))
-HDR_INC = $(addprefix -I, $(HDR_FOLDER))
-
-$(NAME): $(OBJS) $(HDRS)
+$(NAME): $(OBJS_CHECK) $(OBJS_PRINT) $(OBJS_PRINTF) $(OBJS_GNL) $(OBJS_STRING) $(OBJS_LIST) $(OBJS_MEMORY) $(HDRS)
 	$(AR) $@ $^
 
-$(OBJS_DIR)%.o: %.c $(HDRS)
+$(OBJS_CHECK):%.o: %.c $(HDRS)
+	$(CC) $(CFLAGS) -c $(HDR_INC) -o $@ $<
+
+$(OBJS_PRINT):%.o: %.c $(HDRS)
+	$(CC) $(CFLAGS) -c $(HDR_INC) -o $@ $<
+
+$(OBJS_PRINTF):%.o: %.c $(HDRS)
+	$(CC) $(CFLAGS) -c $(HDR_INC) -o $@ $<
+
+$(OBJS_GNL):%.o: %.c $(HDRS)
+	$(CC) $(CFLAGS) -c $(HDR_INC) -o $@ $<
+
+$(OBJS_STRING):%.o: %.c $(HDRS)
+	$(CC) $(CFLAGS) -c $(HDR_INC) -o $@ $<
+
+$(OBJS_LIST):%.o: %.c $(HDRS)
+	$(CC) $(CFLAGS) -c $(HDR_INC) -o $@ $<
+
+$(OBJS_MEMORY):%.o: %.c $(HDRS)
 	$(CC) $(CFLAGS) -c $(HDR_INC) -o $@ $<
 
 all: $(NAME) $(HDRS)
 
-bonus: $(OBJS) $(OBJS_BONUS) $(HDRS)
-	$(AR) $(NAME) $^
-
 clean:
-	$(RM) $(OBJS) $(OBJS_BONUS)
+	$(RM) $(OBJS_CHECK) $(OBJS_PRINT) $(OBJS_PRINTF) $(OBJS_GNL) $(OBJS_STRING) $(OBJS_LIST) $(OBJS_MEMORY)
 
 fclean: clean
 	$(RM) $(NAME)
 
 re: fclean all
 
-libft.h: $(HDR_FOLDER)libft.h
-	@cp $(HDR_FOLDER)libft.h .
-
-.PHONY: bonus all clean fclean re
+.PHONY: all clean fclean re

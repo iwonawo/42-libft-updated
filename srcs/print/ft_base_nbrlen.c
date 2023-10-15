@@ -1,39 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_base_nbrlen.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: iwozniak <iwozniak@student.42abudhabi.ae>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/13 19:17:23 by iwozniak          #+#    #+#             */
-/*   Updated: 2023/07/25 10:04:21 by iwozniak         ###   ########.fr       */
+/*   Created: 2023/07/31 16:23:21 by iwozniak          #+#    #+#             */
+/*   Updated: 2023/08/10 10:13:40 by iwozniak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static char	*ft_strcpy(char *dest, const char *src)
+size_t	ft_base_nbrlen(long long int n, size_t base)
 {
-	int	i;
+	size_t	i;
 
-	i = 0;
-	while (src[i] != '\0')
+	i = 1;
+	while (n >= (long long int)base)
 	{
-		dest[i] = src[i];
+		n /= base;
 		i++;
 	}
-	dest[i] = '\0';
-	return (dest);
-}
-
-char	*ft_strdup(const char *src)
-{
-	unsigned int	len;
-	char			*dest;
-
-	len = ft_strlen(src);
-	dest = (char *)malloc(sizeof(char) * (len + 1));
-	if (!dest)
-		return (NULL);
-	return (ft_strcpy(dest, src));
+	return (i);
 }

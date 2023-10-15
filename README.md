@@ -17,7 +17,6 @@ https://github.com/iwonawo/42-libft-updated.git
 ```bash
 cd libft
 make
-make bonus
 make re
 ```
 
@@ -41,7 +40,6 @@ For the main test files in tests/ folder run:
 ```bash
 cd libft
 make
-make bonus
 cc tests/test-file.c -I./includes -L. -lft -lbsd
 ./a.out
 ```

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: iwozniak <iwozniak@student.42abudhabi.ae>  +#+  +:+       +#+        */
+/*   By: iwozniak <iwozniak@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/04 15:01:28 by iwozniak          #+#    #+#             */
-/*   Updated: 2023/07/25 14:20:24 by iwozniak         ###   ########.fr       */
+/*   Created: 2023/10/14 13:31:08 by iwozniak          #+#    #+#             */
+/*   Updated: 2023/10/14 16:21:14 by iwozniak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ static long long int	ft_result(const char *str, long long int i, int sign)
 	return (res);
 }
 
-int	ft_atoi(const char *str)
+long	ft_atoi(const char *str)
 {
 	long long int	i;
 	int				sign;

@@ -1,32 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
+/*   ft_putnbr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: iwozniak <iwozniak@student.42abudhabi.a    +#+  +:+       +#+        */
+/*   By: iwozniak <iwozniak@student.42abudhabi.ae>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/13 19:16:55 by iwozniak          #+#    #+#             */
-/*   Updated: 2023/07/27 12:54:22 by iwozniak         ###   ########.fr       */
+/*   Updated: 2023/10/15 09:55:02 by iwozniak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putnbr_fd(int n, int fd)
+int	ft_putnbr(long long int n)
 {
-	if (n == -2147483648)
-		ft_putstr_fd("-2147483648", fd);
-	else if (n < 0)
+	const char	*base;
+	int			nbr_len;
+
+	nbr_len = 0;
+	base = "0123456789";
+	if (n == LLONG_MIN)
 	{
-		ft_putchar_fd('-', fd);
-		n = n * -1;
-		ft_putnbr_fd(n, fd);
+		write(1, "-9223372036854775807", 20);
+		return (20);
 	}
-	else if (n > 9)
+	if (n < 0)
 	{
-		ft_putnbr_fd((n / 10), fd);
-		ft_putnbr_fd((n % 10), fd);
+		write(1, "-", 1);
+		nbr_len += ft_putnbr(-n);
 	}
-	else if (n < 10)
-		ft_putchar_fd((n + 48), fd);
+	else if (n >= 10)
+	{
+		ft_putnbr(n / 10);
+		ft_putnbr(n % 10);
+	}
+	else
+		write(1, &base[n], 1);
+	nbr_len += ft_base_nbrlen(n, ft_strlen(base));
+	return (nbr_len);
 }

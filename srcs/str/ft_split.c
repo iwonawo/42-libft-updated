@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: iwozniak <iwozniak@student.42abudhabi.ae>  +#+  +:+       +#+        */
+/*   By: iwozniak <iwozniak@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/05 15:05:45 by iwozniak          #+#    #+#             */
-/*   Updated: 2023/07/25 10:04:56 by iwozniak         ###   ########.fr       */
+/*   Created: 2023/10/14 13:27:48 by iwozniak          #+#    #+#             */
+/*   Updated: 2023/10/14 13:27:52 by iwozniak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

@@ -1,42 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strjoin.c                                       :+:      :+:    :+:   */
+/*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: iwozniak <iwozniak@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/13 19:17:45 by iwozniak          #+#    #+#             */
-/*   Updated: 2023/07/27 11:15:08 by iwozniak         ###   ########.fr       */
+/*   Created: 2023/10/14 13:36:36 by iwozniak          #+#    #+#             */
+/*   Updated: 2023/10/14 13:36:39 by iwozniak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strjoin(char const *s1, char const *s2)
+char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	char	*fresh;
-	size_t	i;
-	size_t	j;
+	char			*substring;
+	unsigned int	i;
+	size_t			s_len;
 
-	if (!s1)
-		return ((char *)s2);
-	if (!s2)
-		return ((char *)s1);
-	i = 0;
-	fresh = (char *)malloc(sizeof(char) * (ft_strlen(s1) + ft_strlen(s2)) + 1);
-	if (!fresh)
+	if (!s)
 		return (NULL);
-	while (i < ft_strlen(s1))
+	i = 0;
+	s_len = ft_strlen(s);
+	if (start >= s_len)
+		len = 0;
+	else if (len > s_len - start)
+		len = s_len - start;
+	substring = (char *)malloc(sizeof(char) * (len + 1));
+	if (!substring)
+		return (NULL);
+	while (i < len)
 	{
-		fresh[i] = s1[i];
+		substring[i] = s[start];
 		i++;
+		start++;
 	}
-	j = 0;
-	while (i < (ft_strlen(s1) + ft_strlen(s2)))
-	{
-		fresh[i] = s2[j++];
-		i++;
-	}
-	fresh[i] = '\0';
-	return (fresh);
+	substring[i] = '\0';
+	return (substring);
 }
