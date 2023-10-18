@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: iwozniak <iwozniak@student.42abudhabi.ae>  +#+  +:+       +#+        */
+/*   By: iwozniak <iwozniak@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/04 09:32:51 by iwozniak          #+#    #+#             */
-/*   Updated: 2023/10/15 10:39:38 by iwozniak         ###   ########.fr       */
+/*   Updated: 2023/10/18 13:14:43 by iwozniak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,7 +84,6 @@ void	*ft_memset(void *dest, int c, size_t n);
 /*	PRINT                                                                     */
 /* ************************************************************************** */
 
-// wszystkie zamienic na fd
 size_t	ft_base_nbrlen(long long int n, size_t base);
 void	ft_putchar_fd(char c, int fd);
 int		ft_putchar(char c);

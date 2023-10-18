@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: iwozniak <iwozniak@student.42abudhabi.ae>  +#+  +:+       +#+         #
+#    By: iwozniak <iwozniak@student.42abudhabi.a    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/09/16 13:21:57 by iwozniak          #+#    #+#              #
-#    Updated: 2023/10/15 10:47:24 by iwozniak         ###   ########.fr        #
+#    Updated: 2023/10/18 13:14:18 by iwozniak         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,11 +22,7 @@ CFILES_CHECK = \
 			ft_isprint
 
 CFILES_GNL = get_next_line \
-			ft_strlen_gnl \
-			ft_strchr_gnl \
-			ft_strcpy_gnl \
-			ft_strdup_gnl \
-			ft_strjoin_gnl
+			get_next_line_utils
 
 CFILES_LIST = \
 			ft_lstadd_back \
@@ -46,7 +42,7 @@ CFILES_MEMORY = \
 			ft_memmove \
 			ft_memchr \
 			ft_memcmp \
-			ft_calloc 
+			ft_calloc
 
 CFILES_PRINT = \
 			ft_base_nbrlen \
@@ -62,15 +58,12 @@ CFILES_PRINT = \
 			ft_putnbr_fd \
 
 CFILES_PRINTF = ft_printf \
-			ft_putchar_pf \
-			ft_putstr_pf \
+			ft_printf_utils \
 			ft_putnbr_pf \
 			ft_base_nbrlen_pf \
 			ft_u_base_nbrlen_pf \
 			ft_u_base_putnbr_pf \
 			ft_u_puthexa_pf \
-			ft_strlen_pf \
-			ft_strchr_pf
 
 CFILES_STRING = \
 			ft_atoi \
