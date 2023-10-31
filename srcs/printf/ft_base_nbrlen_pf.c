@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_base_nbrlen_pf.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: iwozniak <iwozniak@student.42abudhabi.ae>  +#+  +:+       +#+        */
+/*   By: iwozniak <iwozniak@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/31 16:23:21 by iwozniak          #+#    #+#             */
-/*   Updated: 2023/10/15 09:52:44 by iwozniak         ###   ########.fr       */
+/*   Updated: 2023/10/31 14:29:33 by iwozniak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

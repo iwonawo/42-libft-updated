@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: iwozniak <iwozniak@student.42abudhabi.ae>  +#+  +:+       +#+        */
+/*   By: iwozniak <iwozniak@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/22 20:52:48 by iwozniak          #+#    #+#             */
-/*   Updated: 2023/10/15 09:46:20 by iwozniak         ###   ########.fr       */
+/*   Updated: 2023/10/31 15:35:57 by iwozniak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

@@ -6,12 +6,46 @@
 /*   By: iwozniak <iwozniak@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/14 13:31:08 by iwozniak          #+#    #+#             */
-/*   Updated: 2023/10/14 16:21:14 by iwozniak         ###   ########.fr       */
+/*   Updated: 2023/10/31 16:47:41 by iwozniak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+/*
+	The ft_atoi function converts a string representation of an integer to
+	its corresponding integer value.
+
+	Parameters:
+	str - A pointer to the input string.
+
+	Return:
+	The integer value obtained from the input string.
+
+	Description:
+	The ft_atoi function scans the input string and converts it to an
+	integer. It skips any leading whitespace characters by advancing the
+	pointer. If a plus (+) or minus (-) sign is encountered, it determines
+	the sign of the number and advances the pointer. Then, it processes
+	each digit character and calculates the corresponding integer value.
+	It performs checks to prevent overflow by comparing the current value
+	with the previous value multiplied by the sign. If an overflow occurs,
+	it returns 0 if the sign is positive or -1 if the sign is negative.
+	Finally, it returns the resulting integer value.
+
+	Example:
+	ft_atoi("12345");
+	returns 12345
+
+	ft_atoi("-456");
+	returns -456
+
+	ft_atoi("2147483647");
+	returns 2147483647 (maximum value of int)
+
+	ft_atoi("99999999999999999999");
+	returns -1 (exceeds 20 digits with positive sign)
+*/
 static void	ft_sign(const char c, int *sign)
 {
 	if (c == '-')
